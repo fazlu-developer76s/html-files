@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags Input Example</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap Tags Input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+    <style>
+        .bootstrap-tagsinput {
+            margin: 0;
+            width: 100%;
+            padding: 0.5rem 0.75rem 0;
+            font-size: 1rem;
+            line-height: 1.25;
+            transition: border-color 0.15s ease-in-out;
+        }
+        .bootstrap-tagsinput.has-focus {
+            background-color: #fff;
+            border-color: #5cb3fd;
+        }
+        .label-info {
+            display: inline-block;
+            background-color: #636c72;
+            padding: 0 .4em .15em;
+            border-radius: .25rem;
+            margin-bottom: 0.4em;
+        }
+        .bootstrap-tagsinput input {
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <form onsubmit="return false;">
+        <div class="form-group row">
+            <label for="input" class="col-2 col-form-label">Input</label>
+            <div class="col-10">
+                <input type="text" name="input" class="form-control" placeholder="          ">
+                <small class="form-text text-muted">Separate keywords with a comma, space bar, or enter key</small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="output" class="col-2 col-form-label">Output</label>
+            <div class="col-10">
+                <input type="text" name="output" class="form-control">
+            </div>
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap Tags Input JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize the tags input
+        $('input[name="input"]').tagsinput({
+            trimValue: true,
+            confirmKeys: [13, 44, 32], // enter, comma, space
+            focusClass: 'my-focus-class'
+        });
+
+        // Zip code validation function
+        function isValidZipCode(zip) {
+            return /^\d{6}$/.test(zip); // Check if zip code is exactly 6 digits
+        }
+
+        // Validate zip code before adding
+        $('input[name="input"]').on('beforeItemAdd', function(event) {
+            var zipCode = event.item;
+
+            if (!isValidZipCode(zipCode)) {
+                event.cancel = true; // Prevent adding if it's not 6 digits
+                alert("Each zip code must be exactly 6 digits.");
+            }
+        });
+
+        // Add focus/blur classes for input field
+        $('.bootstrap-tagsinput input').on('focus', function() {
+            $(this).closest('.bootstrap-tagsinput').addClass('has-focus');
+        }).on('blur', function() {
+            $(this).closest('.bootstrap-tagsinput').removeClass('has-focus');
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Generation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="pattern"></div>
+
+    <script>
+
+
+        $(document).ready(function(){
+            let rows = 6;
+            let pattern = "";
+            for(let i =1; i <= rows; i++){
+                let row = "";
+                for(let j=1; j<=i; j++){
+                    row += ((i +j) % 2 === 0 ) ?  "1":"0";
+                }
+                pattern += row + "<br>";
+            }
+            $("#pattern").html(pattern);  // Display the pattern in the div with id "pattern"
+        });
+
+        // $(document).ready(function () {
+        //     let rows = 6;
+        //     let pattern = "";
+        //     for (let i = 1; i <= rows; i++) {
+        //         let row = "";
+        //         for (let j = 1; j <= i; j++) {
+        //             row += ((i + j) % 2 === 0) ? "1" : "0";
+        //         }
+        //         pattern += row + "<br>"; 
+        //     }
+
+        //     $("#pattern").html(pattern); 
+        // });
+    </script>
+</body>
+</html>
