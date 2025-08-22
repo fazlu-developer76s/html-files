@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYC Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    <style>
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <form id="kycForm" method="POST" enctype="multipart/form-data" action="/submit-kyc">
+        <input type="hidden" id="company_type" value="{{ $company->company_type }}">
+        @csrf
+
+        <!-- For Private Limited or Public Limited -->
+        @if($company->company_type == "private_limited" || $company->company_type == "public_limited")
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h4>{{ ucwords(str_replace('_',' ', $company->company_type)) }}</h4>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_pan_no">Company PAN</label>
+                    <input type="text" name="company_pan_no" class="form-control" id="company_pan_no" placeholder="Company Pancard">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_coi">Company COI</label>
+                    <input type="text" name="company_coi" class="form-control" id="company_coi" placeholder="Company COI">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_gst">Company GST (Optional)</label>
+                    <input type="text" name="company_gst" class="form-control" id="company_gst" placeholder="Company GST">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_pan_attachement">Attach Company PAN</label>
+                    <input type="file" name="company_pan_attachement" class="form-control" id="company_pan_attachement">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_coi_attachment">Attach Company COI</label>
+                    <input type="file" name="company_coi_attachment" class="form-control" id="company_coi_attachment">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_gst_attachment">Attach GST (Optional)</label>
+                    <input type="file" name="company_gst_attachment" class="form-control" id="company_gst_attachment">
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <!-- For Partnership -->
+        @if($company->company_type == "partnership")
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h4>{{ ucwords(str_replace('_',' ', $company->company_type)) }}</h4>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="firm_name">Firm Name</label>
+                    <input type="text" name="firm_name" class="form-control" id="firm_name" placeholder="Firm Name">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="firm_pan">Firm PAN</label>
+                    <input type="text" name="firm_pan" class="form-control" id="firm_pan" placeholder="Firm Pancard">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="firm_gst">Firm GST (Optional)</label>
+                    <input type="text" name="firm_gst" class="form-control" id="firm_gst" placeholder="Firm GST">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="partnership_deed_attachement">Attach Partnership Deed</label>
+                    <input type="file" name="partnership_deed_attachement" class="form-control" id="partnership_deed_attachement">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_pan_attachement">Attach Company PAN</label>
+                    <input type="file" name="company_pan_attachement" class="form-control" id="company_pan_attachement">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="gst_attachement">Attach GST</label>
+                    <input type="file" name="gst_attachement" class="form-control" id="gst_attachement">
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <!-- For Proprietorship -->
+        @if($company->company_type == "proprietorship")
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h4>{{ ucwords(str_replace('_',' ', $company->company_type)) }}</h4>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="firm_name">Firm Name</label>
+                    <input type="text" name="firm_name" class="form-control" id="firm_name" placeholder="Firm Name">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="firm_pan">Firm Pancard</label>
+                    <input type="text" name="firm_pan" class="form-control" id="firm_pan" placeholder="Firm Pancard">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="firm_gst">Firm GST (Optional)</label>
+                    <input type="text" name="firm_gst" class="form-control" id="firm_gst" placeholder="Firm GST">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="company_pan_attachement">Attach Company PAN (Optional)</label>
+                    <input type="file" name="company_pan_attachement" class="form-control" id="company_pan_attachement">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="formrow">
+                    <label for="gst_attachement">Attach GST</label>
+                    <input type="file" name="gst_attachement" class="form-control" id="gst_attachement">
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <div class="col-md-12 mt-3">
+            <button type="submit" id="kyc_submit_form" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+$(document).ready(function() {
+    $("#kycForm").validate({
+        // Validation rules and messages here
+        rules: {
+            company_name: {
+                required: function() {
+                    return $("#company_type").val() === "private_limited" || $("#company_type").val() === "public_limited";
+                }
+            },
+            company_pan_no: {
+                required: function() {
+                    return $("#company_type").val() === "private_limited" || $("#company_type").val() === "public_limited";
+                }
+            },
+            company_coi: {
+                required: function() {
+                    return $("#company_type").val() === "private_limited" || $("#company_type").val() === "public_limited";
+                }
+            },
+            firm_name: {
+                required: function() {
+                    return $("#company_type").val() === "partnership" || $("#company_type").val() === "proprietorship";
+                }
+            },
+            firm_pan: {
+                required: function() {
+                    return $("#company_type").val() === "partnership" || $("#company_type").val() === "proprietorship";
+                }
+            },
+            company_pan_attachement: {
+                required: function() {
+                    return $("#company_type").val() !== "proprietorship";
+                }
+            },
+            company_coi_attachment: {
+                required: function() {
+                    return $("#company_type").val() === "private_limited" || $("#company_type").val() === "public_limited";
+                }
+            },
+            company_gst_attachment: {
+                required: function() {
+                    return $("#company_type").val() === "private_limited" || $("#company_type").val() === "public_limited";
+                }
+            },
+            partnership_deed_attachement: {
+                required: function() {
+                    return $("#company_type").val() === "partnership";
+                }
+            },
+            gst_attachement: {
+                required: function() {
+                    return $("#company_type").val() === "partnership" || $("#company_type").val() === "proprietorship";
+                }
+            }
+        },
+        messages: {
+            company_name: "Please enter the company name.",
+            company_pan_no: "Please enter the company PAN.",
+            company_coi: "Please enter the company COI.",
+            firm_name: "Please enter the firm name.",
+            firm_pan: "Please enter the firm PAN.",
+            company_pan_attachement: "Please upload the company PAN attachment.",
+            company_coi_attachment: "Please upload the COI attachment.",
+            company_gst_attachment: "Please upload the GST attachment.",
+            partnership_deed_attachement: "Please upload the partnership deed attachment.",
+            gst_attachement: "Please upload the GST attachment."
+        },
+        errorPlacement: function(error, element) {
+            if (!element.next('span').length) {
+                var errorSpan = $('<span class="text-danger"></span>').append(error);
+                errorSpan.insertAfter(element);
+            } else {
+                element.next('span').text(error.text());
+            }
+        },
+        submitHandler: function(form) {
+            $.ajax({
+                url: $(form).attr('action'),
+                type: 'POST',
+                data: new FormData(form),
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    alert('Form submitted successfully!');
+                    console.log(response);
+                },
+                error: function(xhr, status, error) {
+                    alert('An error occurred: ' + error);
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+    });
+
+    $("#kyc_submit_form").click(function(event) {
+        event.preventDefault();
+        $("#kycForm").valid();
+    });
+});
+</script>
+
+</body>
+</html>

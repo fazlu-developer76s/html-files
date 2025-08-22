@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="htmloutput">
+		
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <!-- task 
+		1
+		01
+		101
+		0101
+		10101
+		010101 -->
+
+<script>
+	$(document).ready(function(){
+		let item = 6
+		let htmloutput = '';
+    	for(i=1; i <= 6; i++ ){
+    		htmloutput += "<br>";
+    		for(p=1; p <= i; p++){
+    			htmloutput += ((i+p)%2 == 0 ) ? '1' :'0';
+    			// console.log(i+p%2);
+    		    // console.log(p);
+    		   // htmloutput += ( p % 2 == 0 ) ? '1':'0';	
+    		}
+    	} 
+    	$("#htmloutput").html(htmloutput);
+	});
+</script>
+</body>
+</html>

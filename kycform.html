@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujjar Group Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .custom-label {
+            font-weight: bold;
+        }
+        .bordered {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        .checkbox-inline input {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h3 class="text-center">GUJJAR GROUP</h3>
+    <h5 class="text-center">Gujjar Microservices Foundation</h5>
+    <form>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="custom-label">File No:</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label class="custom-label">Date:</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label class="custom-label">Route No:</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <!-- Customer Info -->
+        <div class="bordered mb-3">
+            <h6 class="section-title">Customer Information</h6>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Customer Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">S/o, D/o, W/o:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Type of Work:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Shop Address:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Shop Type:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="shopType" value="own">
+                        <label class="form-check-label">Own</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="shopType" value="rented">
+                        <label class="form-check-label">Rented</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Home Address:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Home Type:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="homeType" value="own">
+                        <label class="form-check-label">Own</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="homeType" value="rented">
+                        <label class="form-check-label">Rented</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Marital Status:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="maritalStatus" value="married">
+                        <label class="form-check-label">Married</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="maritalStatus" value="single">
+                        <label class="form-check-label">Single</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Mobile No:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">SMS No:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Reference 1 Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Reference 1 Mobile:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Reference 2 Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Reference 2 Mobile:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <!-- Loan Information -->
+        <div class="bordered mb-3">
+            <h6 class="section-title">Loan Information</h6>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Loan Amount:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Processing Fees:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">EMI:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Cheque:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cheque" value="yes">
+                        <label class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cheque" value="no">
+                        <label class="form-check-label">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guarantor 1 Information -->
+        <div class="bordered mb-3">
+            <h6 class="section-title">Guarantor 1</h6>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Guarantor Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">S/o, D/o, W/o:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Type of Work:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Shop Address:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <label class="custom-label">Mobile No:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-label">Shop Type:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="shopType1" value="own">
+                        <label class="form-check-label">Own</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="shopType1" value="rented">
+                        <label class="form-check-label">Rented</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guarantor 2 Information -->
+        <div class="bordered mb-3">
+            <h6 class="section-title">Guarantor 2</h6>
+            <!-- Similar to Guarantor 1, repeat the fields here -->
+        </div>
+
+        <!-- Other Info -->
+        <div class="bordered mb-3">
+            <h6 class="section-title">Additional Information</h6>
+            <!-- Marketing, Client Signature, etc. fields go here -->
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

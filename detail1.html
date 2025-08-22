@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Detail Info Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1>Lead Details</h1>
+            <p class="text-muted">Comprehensive view of the lead's information</p>
+        </div>
+    </div>
+
+    <!-- Lead Overview Section -->
+    <div class="row">
+        <!-- Left Column: Lead Basic Info -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Lead Information</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Email:</strong> johndoe@example.com</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Company:</strong> Acme Corporation</p>
+                    <p><strong>Position:</strong> Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Lead Contact and Address Info -->
+        <div class="col-lg-8 col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0">Contact & Address Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h5>Address</h5>
+                            <p>1234 Elm Street, Suite 567<br>San Francisco, CA 94101</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h5>Additional Contacts</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">Assistant: Jane Smith</li>
+                                <li class="list-group-item">Alternate Phone: (987) 654-3210</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lead Activity & Notes Section -->
+    <div class="row">
+        <!-- Lead Activity Log -->
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">Activity Log</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Meeting Scheduled
+                            <span class="badge bg-primary rounded-pill">1 day ago</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Follow-up Call
+                            <span class="badge bg-secondary rounded-pill">3 days ago</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Email Sent
+                            <span class="badge bg-success rounded-pill">5 days ago</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Notes & Tags -->
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">Notes & Tags</h4>
+                </div>
+                <div class="card-body">
+                    <h5>Notes</h5>
+                    <p>John is particularly interested in digital marketing solutions. Follow up with a proposal for Q4.</p>
+                    <h5>Tags</h5>
+                    <span class="badge bg-primary">Marketing</span>
+                    <span class="badge bg-info">High Value</span>
+                    <span class="badge bg-warning">Needs Follow-up</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
